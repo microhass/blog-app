@@ -48,9 +48,9 @@ The template for this repo was generated automatically by `rails`. Databases and
 </details>
 
 <details>
-<summary>SQLite3</summary>
+<summary>Postgresql</summary>
   <ul>
-    <li><a href="https://www.sqlite.org/">SQLite</a></li>
+    <li><a href="https://www.postgresql.org/">Postgresql</a></li>
   </ul>
 </details>
 
@@ -145,8 +145,6 @@ Feel free to check the [issues page](../../issues/).
 
 > If you'd like to contribute to this project, feel free to fork the repository and make changes as you see fit. Please submit a pull request with your changes and I'll review them as soon as possible.
 
-If you like this project...
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
@@ -154,8 +152,6 @@ If you like this project...
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 > I would like to thank my coding partners and mentor for the support, and Microverse for the opportunity.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
