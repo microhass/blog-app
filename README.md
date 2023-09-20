@@ -47,6 +47,13 @@ The template for this repo was generated automatically by `rails`. Databases and
   </ul>
 </details>
 
+<details>
+<summary>SQLite3</summary>
+  <ul>
+    <li><a href="https://www.sqlite.org/">SQLite</a></li>
+  </ul>
+</details>
+
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
