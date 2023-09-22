@@ -48,7 +48,6 @@ RSpec.describe Post, type: :Model do
     expect(post.errors[:likes_counter]).to include('must be an integer')
   end
 
-
   describe '#update_posts_counter' do
     it 'should record the posts counter' do
       counter = post.update_posts_counter
