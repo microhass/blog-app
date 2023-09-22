@@ -1,24 +1,44 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  it 'updates the likes counter for a post when created' do
-    post = FactoryBot.create(:post)
-    user = FactoryBot.create(:user)
-
-    expect do
-      FactoryBot.create(:like, post:, user:)
-      post.reload
-    end.to change(post, :likes_counter).by(1)
+  let(:user) do
+    User.new(name: 'John Doe', photo: 'photo.jpg', bio: 'I am John Doe', posts_counter: 0)
   end
 
-  it 'updates the likes counter for a post when destroyed' do
-    post = FactoryBot.create(:post)
-    user = FactoryBot.create(:user)
-    like = FactoryBot.create(:like, post:, user:)
+  before {user.save}
 
-    expect do
-      like.destroy
-      post.reload
-    end.to change(post, :likes_counter).by(-1)
+  let(:post) do
+    Post.new(
+      title: 'My first post',
+      text: 'This is my first post',
+      comments_counter: 1,
+      likes_counter: 0,
+      author_id: user.id
+    )
+  end
+
+  before {post.save}
+
+  it "belongs to a user" do
+    like = Like.new(user: user, post: post)
+    expect(like.user).to eq(user)
+  end
+
+  it "belongs to a post" do
+    like = Like.new(user: user, post: post)
+    expect(like.post).to eq(post)
+  end
+
+  it "updates post likes_counter after creation" do
+    like = Like.create(user: user, post: post)
+    expect(post.likes_counter).to eq(1)
+  end
+
+  it "updates post likes_counter after destruction" do
+    like = Like.create(user: user, post: post)
+    like = Like.create(user: user, post: post)
+    like = Like.create(user: user, post: post)
+    like.destroy
+    expect(post.likes_counter).to eq(2) 
   end
 end
