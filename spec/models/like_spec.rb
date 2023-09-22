@@ -5,7 +5,7 @@ RSpec.describe Like, type: :model do
     User.new(name: 'John Doe', photo: 'photo.jpg', bio: 'I am John Doe', posts_counter: 0)
   end
 
-  before {user.save}
+  before { user.save }
 
   let(:post) do
     Post.new(
@@ -17,28 +17,28 @@ RSpec.describe Like, type: :model do
     )
   end
 
-  before {post.save}
+  before { post.save }
 
-  it "belongs to a user" do
-    like = Like.new(user: user, post: post)
+  it 'belongs to a user' do
+    like = Like.new(user:, post:)
     expect(like.user).to eq(user)
   end
 
-  it "belongs to a post" do
-    like = Like.new(user: user, post: post)
+  it 'belongs to a post' do
+    like = Like.new(user:, post:)
     expect(like.post).to eq(post)
   end
 
-  it "updates post likes_counter after creation" do
-    like = Like.create(user: user, post: post)
+  it 'updates post likes_counter after creation' do
+    Like.create(user:, post:)
     expect(post.likes_counter).to eq(1)
   end
 
-  it "updates post likes_counter after destruction" do
-    like = Like.create(user: user, post: post)
-    like = Like.create(user: user, post: post)
-    like = Like.create(user: user, post: post)
+  it 'updates post likes_counter after destruction' do
+    Like.create(user:, post:)
+    Like.create(user:, post:)
+    like = Like.create(user:, post:)
     like.destroy
-    expect(post.likes_counter).to eq(2) 
+    expect(post.likes_counter).to eq(2)
   end
 end

@@ -2,11 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :Model do
   # let(:user) { User.new(name: 'Cosmas', photo: 'www.newpics.com/jpg', bio: 'First son', posts_counter: 4) }
-  let(:user) { User.new(name: 'John Doe', photo: 'photo.jpg', bio: 'I am John Doe', posts_counter: 4)}
+  let(:user) { User.new(name: 'John Doe', photo: 'photo.jpg', bio: 'I am John Doe', posts_counter: 4) }
   before { user.save }
 
-   let(:post) do
-    Post.new(title: 'My first post', text: 'This is my first post', comments_counter: 1, likes_counter: 3, author_id: user.id)
+  let(:post) do
+    Post.new(title: 'My first post', text: 'This is my first post', comments_counter: 1, likes_counter: 3,
+             author_id: user.id)
   end
   before { post.save }
 
