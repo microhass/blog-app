@@ -9,7 +9,7 @@ RSpec.describe Post, type: :model do
 
   it 'validates title length not to exceed 250 characters' do
     title = 'H' * 251
-    post = Post.new(title: title)
+    post = Post.new(title:)
     expect(post).not_to be_valid
     expect(post.errors[:title]).to include('is too long (maximum is 250 characters)')
   end
