@@ -12,7 +12,6 @@ RSpec.describe 'Users', type: :request do
       expect(response).to be_successful
     end
 
-
     it 'renders the placeholder for all users' do
       get users_path
       expect(response.body).to include('Here is a list of all the users.')
