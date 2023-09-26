@@ -1,7 +1,5 @@
-require 'rails_helper'
 
-<div class="user-list">
-    <%= link_to user_path(user.id) do %>
+    <%= link_to("/users/#{user.id}") do %>
         <div class="avatar">
             <img src="<%= user.photo %>" alt="<%= user.name %> photo">
         </div>
@@ -14,4 +12,3 @@ require 'rails_helper'
             </p>
         </div>
     <% end %>
-</div>
