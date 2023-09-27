@@ -1,25 +1,17 @@
-<div class='user-detail'>
-    <%= render 'user', user: @user %>
+<div class="user-detail">
+  <%= render 'user', user: @user %>
 
-    <div class='user-bio'>
-        <h3>Bio</h3>
-        <p><%= @user.bio %></p>
-    </div>
+  <div class="user-bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
 
-    <div class='user-recent-posts'>
-        <h3>Recent Posts</h3>
-        <ul>
-            <% @user.recent_posts.each do |post| %>
-                <%= link_to("/users/posts/#{post.id}") do %>
-                <li>
-                    <h4><%= post.title %></h4>
-                    <p><%= post.text %></p>
-                    <p class='post-stats'>
-                        Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
-                    </p>
-                </li>
-                <% end %>
-            <% end %>
-        </ul>
-    </div>
+  <div class="user-recent-posts">
+    <h3>Recent Posts</h3>
+    <ul>
+      <%= render partial: '/posts/post', collection:
+      @user.recent_posts %>
+    </ul>
+    <%= link_to('View all posts', "/users/#{@user.id}/posts") %>
+  </div>
 </div>

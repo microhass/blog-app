@@ -1,0 +1,10 @@
+<%= link_to("/users/#{post.author.id}/posts/#{post.id}") do %>
+<li>
+  <h4><%= post.title %></h4>
+  <p><%= post.text %></p>
+  <p class="post-stats">
+    Comments: <%= post.comments.count %>, Likes: <%= post.likes.count
+    %>
+  </p>
+</li>
+<% end %>
