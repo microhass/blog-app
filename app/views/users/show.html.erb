@@ -20,5 +20,9 @@
         <% end %>
       <% end %>
     </div>
+  <% else %>
+    <p class='no-content'>
+      <%= @user.name %> has not posted anything yet.
+    </p>
   <% end %>
 </div>
