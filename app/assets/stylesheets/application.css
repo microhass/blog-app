@@ -42,14 +42,6 @@ ul {
   margin: 0;
 }
 
-.user,
-.user-detail .user-bio {
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
-}
-
 .user {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -57,9 +49,18 @@ ul {
   align-items: center;
 }
 
+.user-list .user,
+.user-detail .user-bio {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
 .single-comment .user {
   font-size: 1rem;
   font-weight: bold;
+  display: unset;
 }
 
 .user-list,
