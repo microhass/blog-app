@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.user-list {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: grid;
+  gap: 2rem;
+}
+
+.user-list .user {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.user-list .user:hover {
+  background: #f5f5f5;
+}
+
+.user-list .user .avatar,
+.avatar img {
+  width: 100%;
+  max-width: 100px;
+  border-radius: 50%;
+}
+
+.user .name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user .user-info {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.user-info .user-posts-count {
+  font-size: 1.1rem;
+  color: #999;
+  align-self: flex-end;
+}
+
+.no-content {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #999;
+  margin: 2rem 0;
+}
