@@ -6,8 +6,12 @@
   <div class="post-text">
     <%= @post.text %>
   </div>
-  <div class="post-comments">
-    <h4>Comments</h4>
-    <%= render partial: 'comments/comment', collection: @post.comments %>
-  </div>
+    <div class="post-comments">
+      <h4>Comments</h4>
+      <% if @post.comments.count > 0 then %>
+        <%= render partial: 'comments/comment', collection: @post.comments %>
+      <% else %>
+        <p class='no-content'>No comments yet</p>
+      <% end %>
+    </div>  
 </div>

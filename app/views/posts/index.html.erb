@@ -3,7 +3,7 @@
 
   <div class="user-post-details">
     <% if @user.posts.count > 0 then %>
-      <ul class='user-all-posts'>
+      <ul class='post-list'>
         <%= render partial: 'post', collection: @user.posts %>
       </ul>
     <% else %>
