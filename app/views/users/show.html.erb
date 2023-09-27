@@ -9,11 +9,16 @@
   <% if @user.posts.count > 0 then %>
     <div class="user-recent-posts">
       <h3>Recent Posts</h3>
-      <ul>
-        <%= render partial: '/posts/post', collection:
-        @user.recent_posts %>
+      <ul class='post-list'>
+        <%= render partial: '/posts/post_preview', collection:
+        @user.recent_posts, as: "post" %>
       </ul>
-      <%= link_to('View all posts', "/users/#{@user.id}/posts") %>
+
+      <% if @user.posts.count > 3 then %>
+        <%= link_to("/users/#{@user.id}/posts") do %>
+          <button class="view-all-btn">View all posts</button>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>
