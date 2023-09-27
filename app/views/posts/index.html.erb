@@ -1,9 +1,13 @@
 <div class="user-posts">
   <%= render 'users/user', user: @user %>
 
-  <div class="user-all-posts">
-    <ul>
-      <%= render partial: 'post', collection: @user.posts %>
-    </ul>
+  <div class="user-post-details">
+    <% if @user.posts.count > 0 then %>
+      <ul class='user-all-posts'>
+        <%= render partial: 'post', collection: @user.posts %>
+      </ul>
+    <% else %>
+      <p class='no-content'>This user has no posts created!</p>
+    <% end %>
   </div>
 </div>

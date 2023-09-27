@@ -7,4 +7,11 @@
     %>
   </p>
 </li>
+
+<% if post.comments.count > 0 then %>
+<ul class='user-recent-comments'>
+  <h4>Recent Comments</h4>
+  <%= render partial: '/comments/comment', collection: post.recent_comments %>
+</ul>
+<% end %>
 <% end %>

@@ -1,5 +1,9 @@
 <div class="user-list">
-  <%= render @users %>
+  <% if @users.count > 0 then %>
+    <%= render @users %>
+  <% else %>
+    <p class='no-content'>No users created</p>
+  <% end %>
 </div>
 <%
 =begin%>
