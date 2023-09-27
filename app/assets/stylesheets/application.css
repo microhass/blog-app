@@ -42,6 +42,21 @@ ul {
   margin: 0;
 }
 
+.user,
+.user-detail .user-bio {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-items: center;
+}
+
 .single-comment .user {
   font-size: 1rem;
   font-weight: bold;
@@ -59,26 +74,11 @@ ul {
   gap: 2rem;
 }
 
-.user-list .user,
-.user-detail .user-bio {
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
-}
-
-.user-list .user {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-  align-items: center;
-}
-
-.user-list .user:hover {
+.user:hover {
   background: #f5f5f5;
 }
 
-.user-list .user .avatar,
+.user .avatar,
 .avatar img {
   width: 100%;
   max-width: 100px;
@@ -99,7 +99,7 @@ ul {
 }
 
 .user-info .user-posts-count {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #999;
   align-self: flex-end;
 }
