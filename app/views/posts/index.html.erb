@@ -1,3 +1,13 @@
-<h1>
-    Here is a list of all posts for a given user.
-</h1>
+<div class="user-posts">
+  <%= render 'users/user', user: @user %>
+
+  <div class="user-post-details">
+    <% if @user.posts.count > 0 then %>
+      <ul class='post-list'>
+        <%= render partial: 'post', collection: @user.posts %>
+      </ul>
+    <% else %>
+      <p class='no-content'>This user has no posts created!</p>
+    <% end %>
+  </div>
+</div>

@@ -1,3 +1,17 @@
-<h1>
-    Here is a single post for a given user.
-</h1>
+<div class="post-detail">
+  <div class="post-header">
+    <h4><%= @post.title %> by <%= @post.author.name %></h4>
+    <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+  </div>
+  <div class="post-text">
+    <%= @post.text %>
+  </div>
+    <div class="post-comments">
+      <h4>Comments</h4>
+      <% if @post.comments.count > 0 then %>
+        <%= render partial: 'comments/comment', collection: @post.comments %>
+      <% else %>
+        <p class='no-content'>No comments yet</p>
+      <% end %>
+    </div>  
+</div>

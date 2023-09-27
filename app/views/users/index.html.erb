@@ -1,3 +1,7 @@
-<h1>
-    Here is a list of all the users.
-</h1>
+<div class="user-list">
+  <% if @users.count > 0 then %>
+    <%= render @users %>
+  <% else %>
+    <p class='no-content'>No users created</p>
+  <% end %>
+</div>

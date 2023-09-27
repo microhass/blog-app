@@ -1,0 +1,17 @@
+<%= link_to("/users/#{post.author.id}/posts/#{post.id}") do %>
+<li class='single-post'>
+  <h4><%= post.title %></h4>
+  <p><%= post.text %></p>
+  <p class="post-stats">
+    Comments: <%= post.comments.count %>, Likes: <%= post.likes.count
+    %>
+  </p>
+
+  <% if post.comments.count > 0 then %>
+  <ul class='user-recent-comments'>
+    <h4>Recent Comments</h4>
+    <%= render partial: '/comments/comment', collection: post.recent_comments %>
+  </ul>
+  <% end %>
+  </li>
+<% end %>

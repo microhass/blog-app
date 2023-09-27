@@ -1,3 +1,28 @@
-<h1>
-    Here is the details for a given user.
-</h1>
+<div class="user-detail">
+  <%= render 'user', user: @user %>
+
+  <div class="user-bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <% if @user.posts.count > 0 then %>
+    <div class="user-recent-posts">
+      <h3>Recent Posts</h3>
+      <ul class='post-list'>
+        <%= render partial: '/posts/post_preview', collection:
+        @user.recent_posts, as: "post" %>
+      </ul>
+
+      <% if @user.posts.count > 3 then %>
+        <%= link_to("/users/#{@user.id}/posts") do %>
+          <button class="view-all-btn">View all posts</button>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <p class='no-content'>
+      <%= @user.name %> has not posted anything yet.
+    </p>
+  <% end %>
+</div>
