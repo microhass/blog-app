@@ -10,27 +10,42 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @post = Post.new
+    @post = current_user.posts.new
+    puts params
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.author_id = params[:user_id]
-    @post.save
-
-    redirect_to user_posts_path
+    @post = current_user.posts.new(post_params)
+    if @post.save
+      redirect_to user_posts_path(current_user)
+    else
+      render :new
+    end
   end
 
   def edit
-    @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
+    @post = current_user.posts.find(params[:id])
+    puts params
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
+    @post = current_user.posts.find(params[:id])
+    if @post.update(post_params)
+      redirect_to user_posts_path(current_user)
+    else
+      render :edit
+    end
+  end
 
-    redirect_to user_posts_path
+  def destroy
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(current_user)
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end
