@@ -6,6 +6,12 @@
   <div class="post-text">
     <%= @post.text %>
   </div>
+
+  <div class='like-dislike-btns'>
+    <%= button_to 'Like', user_post_likes_path(@post.author, @post), method: :post, class: 'like-btn' %>
+    <%= button_to 'Dislike', user_post_likes_path(@post.author, @post), method: :delete, class: 'dislike-btn' %>
+  </div>
+
   <div class="post-comments">
     <h4>Comments</h4>
     <% if @post.comments.count > 0 then %>
