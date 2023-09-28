@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :users, only: [:edit, :update, :new, :create], path_names: {edit: 'edit'}
+  resources :posts
 
   # Defines the root path route ("/")
   root "users#index"
