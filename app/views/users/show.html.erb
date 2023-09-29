@@ -25,4 +25,6 @@
       <%= @user.name %> has not posted anything yet.
     </p>
   <% end %>
+
+  <%= link_to 'Create Post', "/users/#{current_user.id}/posts/new", class: 'btn' %>
 </div>
