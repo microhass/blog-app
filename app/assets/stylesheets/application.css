@@ -232,7 +232,8 @@ form textarea:focus {
   border-color: #008293;
 }
 
-form .actions input, .btn {
+form .actions input,
+.btn {
   display: block;
   margin: 1rem auto;
   padding: 0.8rem 2rem;
@@ -245,7 +246,8 @@ form .actions input, .btn {
   transition: all 0.2s ease-in-out;
 }
 
-form .actions input:hover, .btn:hover {
+form .actions input:hover,
+.btn:hover {
   background: #008293;
   color: #fff;
   cursor: pointer;
