@@ -3,7 +3,7 @@ class LikesController < ApplicationController
 
   def create
     @post.likes.create(user_id: current_user.id)
-    redirect_to user_post_path(@post.author, @post)
+    redirect_to user_post_path(@post.author, @post), notice: 'Post liked'
   end
 
   private

@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: 'Comment created'
     else
-      render :new
+      render :new, notice: 'Comment not created'
     end
   end
 
