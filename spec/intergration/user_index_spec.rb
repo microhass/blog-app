@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'User Index Page' do
-  # Create some test users and posts
   let!(:user1) { User.create(name: 'user1', photo: 'https://source.unsplash.com/random/200x200?user=12') }
   let!(:user2) { User.create(name: 'user2', photo: 'https://source.unsplash.com/random/200x200?user=13') }
   let!(:post1) { Post.create(author_id: user1.id, title: 'test') }
