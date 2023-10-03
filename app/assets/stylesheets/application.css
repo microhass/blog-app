@@ -19,6 +19,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #333;
+  text-align: center;
 }
 
 a {
@@ -67,7 +68,7 @@ ul {
 .user-detail,
 .user-posts,
 .post-detail,
-.form-div {
+.form-div, form {
   max-width: 800px;
   margin: 2rem auto;
   padding: 20px;
