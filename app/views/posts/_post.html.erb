@@ -1,4 +1,4 @@
-<%= link_to("/users/#{post.author.id}/posts/#{post.id}") do %>
+<%= link_to user_post_path(@user, post) do %>
 <li class='single-post'>
   <h4><%= post.title %></h4>
   <p><%= post.text %></p>
@@ -10,7 +10,7 @@
   <% if post.comments.count > 0 then %>
   <ul class='user-recent-comments'>
     <h4>Recent Comments</h4>
-    <%= render partial: '/comments/comment', collection: post.recent_comments %>
+    <%= render partial: '/comments/comment', collection: post.recent_comments.includes([:user]) %>
   </ul>
   <% end %>
   </li>

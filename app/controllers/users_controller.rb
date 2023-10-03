@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.save
 
-    redirect_to users_path
+    redirect_to users_path, notice: 'User created'
   end
 
   def edit
@@ -26,14 +26,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
 
-    redirect_to users_path
+    redirect_to users_path, notice: 'User updated'
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
 
-    redirect_to users_path
+    redirect_to users_path, notice: 'User deleted'
   end
 
   private

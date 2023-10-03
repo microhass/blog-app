@@ -1,4 +1,4 @@
-<%= link_to("/users/#{post.author.id}/posts/#{post.id}") do %>
+<%= link_to user_post_path(@user, post) do %>
 <li class='single-post'>
   <h4><%= post.title %></h4>
   <p><%= post.text %></p>

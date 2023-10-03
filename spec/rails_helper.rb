@@ -63,3 +63,5 @@ RSpec.configure do |config|
 
   config.include Rails.application.routes.url_helpers
 end
+
+Capybara.default_driver = :selenium_chrome

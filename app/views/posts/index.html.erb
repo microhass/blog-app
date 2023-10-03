@@ -4,7 +4,7 @@
   <div class="user-post-details">
     <% if @user.posts.count > 0 then %>
       <ul class='post-list'>
-        <%= render partial: 'post', collection: @user.posts %>
+        <%= render partial: 'post', collection: @posts %>
       </ul>
     <% else %>
       <p class='no-content'>This user has no posts created!</p>

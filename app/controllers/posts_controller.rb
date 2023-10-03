@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.where(author_id: params[:user_id])
     @user = User.find(params[:user_id])
-    puts params
   end
 
   def show
@@ -17,30 +16,29 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: 'Post created'
     else
-      render :new
+      render :new, notice: 'Post not created'
     end
   end
 
   def edit
     @post = current_user.posts.find(params[:id])
-    puts params
   end
 
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: 'Post updated'
     else
-      render :edit
+      render :edit, notice: 'Post not updated'
     end
   end
 
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy
-    redirect_to user_posts_path(current_user)
+    redirect_to user_posts_path(current_user), notice: 'Post deleted'
   end
 
   private
