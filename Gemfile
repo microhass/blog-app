@@ -57,10 +57,6 @@ group :development, :test do
 
   # Factorybot
   gem 'factory_bot_rails'
-
-  # The following gems aids with the nuts and bolts
-  # of interacting with the browser.
-  gem 'webdrivers'
 end
 
 group :development do
