@@ -15,9 +15,7 @@
       </ul>
 
       <% if @user.posts.count > 3 then %>
-        <%= link_to("/users/#{@user.id}/posts") do %>
-          <button class="view-all-btn">View all posts</button>
-        <% end %>
+        <%= link_to 'View all posts', user_posts_path(@user), class: 'view-all-btn' %>
       <% end %>
     </div>
   <% else %>

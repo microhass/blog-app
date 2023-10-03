@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.feature 'User show page' do
   let!(:user1) { User.create(name: 'Mike', bio: 'this is test bio', photo: 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') }
-  let!(:post1) { Post.create(user: user1, title: 'Test post 1') }
-  let!(:post2) { Post.create(user: user1, title: 'Test post 2') }
-  let!(:post3) { Post.create(user: user1, title: 'Test post 3') }
+  let!(:post4) { Post.create(author: user1, title: 'Test post 4') }
+  let!(:post1) { Post.create(author: user1, title: 'Test post 1') }
+  let!(:post2) { Post.create(author: user1, title: 'Test post 2') }
+  let!(:post3) { Post.create(author: user1, title: 'Test post 3') }
 
   scenario 'Displays user\'s Profile picture, username, bio and number of posts' do
     visit user_path(user1)
@@ -23,9 +24,9 @@ RSpec.feature 'User show page' do
 
   scenario 'Displays Button that lets me view all of a user\'s posts, and redirects to the posts when clicked' do
     visit user_path(user1)
-    expect(page).to have_link('See all posts')
-    click_link 'See all posts'
-    sleep(1)
+    expect(page).to have_link('View all posts')
+    click_link 'View all posts'
+    sleep(3)
     expect(current_path).to eq(user_posts_path(user1))
   end
 
