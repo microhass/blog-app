@@ -70,7 +70,7 @@ group :development do
   # gem "spring"
 
   # Development letter opener
-  gem "letter_opener"
+  gem 'letter_opener'
 end
 
 group :test do
@@ -85,4 +85,4 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Controller tests
 gem 'rails-controller-testing'
 
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'

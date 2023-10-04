@@ -13,29 +13,17 @@
  *= require_tree .
  *= require_self
  */
-​
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
-​
+
 a {
   text-decoration: none;
   color: #333;
 }
-​
-body > a,
-body > h2,
-body > h3 {
-  text-align: center;
-  display: block;
-}
-​
-body > a {
-  color: #1d43ff;
-}
-​
+
 h1,
 h2,
 h3,
@@ -45,13 +33,24 @@ h6 {
   margin-bottom: 1rem;
   color: #008293;
 }
-​
+
+body > a,
+body > h2,
+body > h3 {
+  text-align: center;
+  display: block;
+}
+
+body > a {
+  color: #1d43ff;
+}
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-​
+
 .notifications {
   width: 100vw;
   max-width: 800px;
@@ -59,7 +58,7 @@ ul {
   height: 2rem;
   padding: 2rem 1rem 1rem;
 }
-​
+
 .alert,
 .notice {
   color: #008293;
@@ -73,18 +72,18 @@ ul {
   width: fit-content;
   margin: 0 auto;
 }
-​
+
 .alert {
-  color: #ff0000;
+  color: #f00;
 }
-​
+
 .user {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
   align-items: center;
 }
-​
+
 .user-list .user,
 .user-detail .user,
 .user-detail .user-bio {
@@ -93,22 +92,31 @@ ul {
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
 }
-​
+
 .user-detail .user {
   color: #3c8dff;
   border-color: transparent;
 }
-​
-.user-detail .user:hover {
-  background: #3c8dff1f;
-}
-​
+
 .single-comment .user {
   font-size: 1rem;
   font-weight: bold;
   display: unset;
 }
-​
+
+.user:hover {
+  background: #f5f5f5;
+}
+
+.user-detail .user:hover {
+  background: #3c8dff1f;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
 body > form,
 .user-list,
 .user-detail,
@@ -122,27 +130,23 @@ body > form,
   display: grid;
   gap: 2rem;
 }
-​
+
 body > form {
   max-width: 600px;
 }
-​
-.user:hover {
-  background: #f5f5f5;
-}
-​
+
 .user .avatar,
 .avatar img {
   width: 100%;
   max-width: 100px;
   border-radius: 50%;
 }
-​
+
 .user .name {
   font-size: 1.5rem;
   font-weight: bold;
 }
-​
+
 .user .user-info {
   height: 100%;
   display: flex;
@@ -150,73 +154,73 @@ body > form {
   align-items: flex-start;
   gap: 3rem;
 }
-​
+
 .user-info .user-posts-count {
   font-size: 0.9rem;
   color: #999;
   align-self: flex-end;
 }
-​
+
 /* Posts */
 .post-list {
   display: grid;
   gap: 1rem;
 }
-​
+
 .single-post {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
 }
-​
+
 .single-post:hover {
   background: #f5f5f5;
 }
-​
+
 .single-post p {
   font-size: 0.9rem;
   color: #6d6d6d;
 }
-​
+
 .single-post h4 {
   font-size: 1rem;
   font-weight: bold;
   color: #313131;
 }
-​
+
 .single-post .post-stats {
   margin-top: 1rem;
   color: #333;
 }
-​
+
 .all-user-posts {
   display: flex;
   gap: 2rem;
 }
-​
+
 .post-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-​
+
 .post-header h4 {
   font-size: 1.2rem;
   font-weight: bold;
 }
-​
+
 .post-header p {
   font-size: 0.8rem;
   color: #999;
 }
-​
+
 .user-recent-posts {
   display: grid;
   gap: 1rem;
   padding: 1rem;
 }
-​
+
 /* Comments */
 .single-comment {
   padding: 1rem;
@@ -224,14 +228,13 @@ body > form {
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
 }
-​
+
 .single-comment .comment {
   color: #888;
   font-size: 0.9rem;
 }
-​
+
 /* Buttons */
-​
 .view-all-btn {
   display: block;
   margin: 2rem auto;
@@ -244,26 +247,21 @@ body > form {
   font-weight: bold;
   transition: all 0.2s ease-in-out;
 }
-​
+
 .view-all-btn:hover {
   background: #008293;
   color: #fff;
   cursor: pointer;
 }
-​
+
 .no-content {
   text-align: center;
   font-size: 1.1rem;
   color: #999;
   margin: 2rem 0;
 }
-​
+
 /* Form */
-form {
-  display: grid;
-  gap: 1rem;
-}
-​
 form a {
   font-size: 0.9rem;
   color: #1d43ff;
@@ -271,12 +269,12 @@ form a {
   display: block;
   margin: 0 auto;
 }
-​
+
 form label {
   font-size: 1.2rem;
   font-weight: bold;
 }
-​
+
 form input,
 form textarea {
   padding: 0.5rem;
@@ -284,13 +282,13 @@ form textarea {
   border-radius: 5px;
   font-size: 1rem;
 }
-​
+
 form input:focus,
 form textarea:focus {
   outline: none;
   border-color: #008293;
 }
-​
+
 form .actions input,
 .btn {
   display: block;
@@ -304,20 +302,20 @@ form .actions input,
   font-weight: bold;
   transition: all 0.2s ease-in-out;
 }
-​
+
 form .actions input:hover,
 .btn:hover {
   background: #008293;
   color: #fff;
   cursor: pointer;
 }
-​
+
 form .field {
   display: grid;
   gap: 0.5rem;
   width: 80%;
 }
-​
+
 .field.remember {
   display: flex;
   align-items: center;
@@ -326,18 +324,18 @@ form .field {
   width: 100%;
   margin: 0 auto;
 }
-​
+
 form .form-bio {
   height: 8rem;
 }
-​
+
 .like-dislike-btns {
   display: flex;
   gap: 1rem;
   align-items: flex-end;
   margin-left: auto;
 }
-​
+
 .like-dislike-btns button {
   padding: 0.5rem 0.8rem;
   border: 1px solid #ddd;
@@ -347,20 +345,20 @@ form .form-bio {
   font-size: 0.8rem;
   transition: all 0.2s ease-in-out;
 }
-​
+
 .like-dislike-btns button:hover {
   background: #008293;
   color: #fff;
   cursor: pointer;
 }
-​
+
 .user-actions {
   display: flex;
   gap: 1rem;
   align-items: center;
   margin-left: auto;
 }
-​
+
 .unhappy {
   max-width: 400px;
   margin: 0 auto;
@@ -371,23 +369,23 @@ form .form-bio {
   gap: 1rem;
   padding: 1rem;
 }
-​
+
 .unhappy .btn.danger {
-  color: #ff0000;
-  border-color: #ff0000;
+  color: #f00;
+  border-color: #f00;
 }
-​
+
 .unhappy .btn.danger:hover {
-  background: #ff0000;
+  background: #f00;
   color: #fff;
 }
-​
+
 #error_explanation {
-  color: #ff0000;
+  color: #f00;
 }
-​
+
 #error_explanation h2 {
   font-size: 1rem;
   text-align: center;
-  color: #ff0000;
+  color: #f00;
 }
