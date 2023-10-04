@@ -1,5 +1,7 @@
 <div class="user-detail">
   <%= render 'user', user: @user %>
+  
+  <%= button_to "Logout" , destroy_user_session_path, method: :delete, class: 'btn' %>
 
   <div class="user-bio">
     <h3>Bio</h3>
@@ -24,5 +26,5 @@
     </p>
   <% end %>
 
-  <%= link_to 'Create Post', "/users/#{current_user.id}/posts/new", class: 'btn' %>
+  <%= link_to 'Create Post', new_user_post_path(@user), class: 'btn' %>
 </div>
