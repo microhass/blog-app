@@ -1,13 +1,15 @@
 <div class="user-detail">
   <%= render 'user', user: @user %>
   
-  <%= button_to "Logout" , destroy_user_session_path, method: :delete, class: 'btn' %>
-
+  <% if current_user == @user then %>
+    <%= button_to "Logout" , destroy_user_session_path, method: :delete, class: 'btn' %>
+  <% end %>
+​
   <div class="user-bio">
     <h3>Bio</h3>
     <p><%= @user.bio %></p>
   </div>
-
+​
   <% if @user.posts.count > 0 then %>
     <div class="user-recent-posts">
       <h3>Recent Posts</h3>
@@ -15,7 +17,7 @@
         <%= render partial: '/posts/post_preview', collection:
         @user.recent_posts, as: "post" %>
       </ul>
-
+​
       <% if @user.posts.count > 3 then %>
         <%= link_to 'View all posts', user_posts_path(@user), class: 'view-all-btn' %>
       <% end %>
@@ -25,6 +27,11 @@
       <%= @user.name %> has not posted anything yet.
     </p>
   <% end %>
-
-  <%= link_to 'Create Post', new_user_post_path(@user), class: 'btn' %>
+​
+  <% if current_user == @user then %>
+    <div class='user-actions'>
+      <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn' %>
+      <%= link_to 'Create Post', new_user_post_path(@user), class: 'btn' %>
+    </div>
+  <% end %>
 </div>
