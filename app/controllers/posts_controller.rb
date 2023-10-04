@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user&.posts.new(post_params)
     if @post.save
-      redirect_to user_path(current_user), notice: 'Post created'
+      redirect_to user_post_path(current_user, @post), notice: 'Post created'
     else
       render :new, notice: 'Post not created'
     end
