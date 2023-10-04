@@ -41,6 +41,31 @@ ul {
   margin: 0;
 }
 
+.notifications {
+  width: 100vw;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 2rem;
+  padding: 2rem 1rem 1rem;
+}
+
+.alert, .notice {
+  color: #008293;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.alert {
+  color: #ff0000;
+}
+
 .user {
   display: grid;
   grid-template-columns: 1fr 2fr;
