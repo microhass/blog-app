@@ -4,7 +4,11 @@
     <img src="<%= user.photo %>" alt="<%= user.name %> photo" />
   </div>
   <div class="user-info">
-    <p class="name"><%= user.name %></p>
+    
+    <p class="name">
+      <%= user.name %>
+      <%= "(you)" if user == current_user %>
+    </p>
     <p class="user-posts-count">
       Number of posts: <%= user.posts.length %>
     </p>

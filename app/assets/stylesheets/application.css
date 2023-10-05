@@ -13,12 +13,10 @@
  *= require_tree .
  *= require_self
  */
-
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
 }
 
 a {
@@ -36,10 +34,47 @@ h6 {
   color: #008293;
 }
 
+body > a,
+body > h2,
+body > h3 {
+  text-align: center;
+  display: block;
+}
+
+body > a {
+  color: #1d43ff;
+}
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.notifications {
+  width: 100vw;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 2rem;
+  padding: 2rem 1rem 1rem;
+}
+
+.alert,
+.notice {
+  color: #008293;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.alert {
+  color: #f00;
 }
 
 .user {
@@ -50,11 +85,17 @@ ul {
 }
 
 .user-list .user,
+.user-detail .user,
 .user-detail .user-bio {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
+}
+
+.user-detail .user {
+  color: #3c8dff;
+  border-color: transparent;
 }
 
 .single-comment .user {
@@ -63,6 +104,20 @@ ul {
   display: unset;
 }
 
+.user:hover {
+  background: #f5f5f5;
+}
+
+.user-detail .user:hover {
+  background: #3c8dff1f;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+body > form,
 .user-list,
 .user-detail,
 .user-posts,
@@ -70,14 +125,14 @@ ul {
 .form-div {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 20px;
+  padding: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: grid;
   gap: 2rem;
 }
 
-.user:hover {
-  background: #f5f5f5;
+body > form {
+  max-width: 600px;
 }
 
 .user .avatar,
@@ -180,7 +235,6 @@ ul {
 }
 
 /* Buttons */
-
 .view-all-btn {
   display: block;
   margin: 2rem auto;
@@ -208,9 +262,12 @@ ul {
 }
 
 /* Form */
-form {
-  display: grid;
-  gap: 1rem;
+form a {
+  font-size: 0.9rem;
+  color: #1d43ff;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 form label {
@@ -259,6 +316,15 @@ form .field {
   width: 80%;
 }
 
+.field.remember {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
 form .form-bio {
   height: 8rem;
 }
@@ -284,4 +350,42 @@ form .form-bio {
   background: #008293;
   color: #fff;
   cursor: pointer;
+}
+
+.user-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.unhappy {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.unhappy .btn.danger {
+  color: #f00;
+  border-color: #f00;
+}
+
+.unhappy .btn.danger:hover {
+  background: #f00;
+  color: #fff;
+}
+
+#error_explanation {
+  color: #f00;
+}
+
+#error_explanation h2 {
+  font-size: 1rem;
+  text-align: center;
+  color: #f00;
 }

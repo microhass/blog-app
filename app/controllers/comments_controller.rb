@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment.user_id = current_user&.id
     if @comment.save
-      redirect_to user_path(current_user), notice: 'Comment created'
+      redirect_to user_post_path(current_user, @comment.post), notice: 'Comment created'
     else
       render :new, notice: 'Comment not created'
     end
